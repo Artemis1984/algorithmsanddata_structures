@@ -9,8 +9,8 @@ from collections import deque
 
 hex_numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
 
-number2 = deque(input("Введите первое шестнадцатеричное число"))
-number1 = deque(input("Введите второе шестнадцатеричное число"))
+number2 = deque(input("Введите первое шестнадцатеричное число: "))
+number1 = deque(input("Введите второе шестнадцатеричное число: "))
 memo_number = 0
 
 
@@ -18,8 +18,6 @@ if len(number1) > len(number2):
     number2.extendleft('0' * (len(number1) - len(number2)))
 elif len(number2) > len(number1):
     number1.extendleft('0' * (len(number2) - len(number1)))
-
-print(number1, number2)
 
 
 result = deque()
@@ -48,6 +46,6 @@ if memo_number == 1:
     result.appendleft(memo_number)
 
 
-print(result)
+print(*result)
 
 
