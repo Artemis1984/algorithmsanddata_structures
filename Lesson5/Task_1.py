@@ -4,13 +4,18 @@
 # (за год для всех предприятий) и отдельно вывести наименования предприятий,
 # чья прибыль выше среднего и ниже среднего.
 
+
 from collections import namedtuple
+
 
 Company = namedtuple("Company", "name, first, second, third, fourth")
 
+
 num_of_comp = int(input("Введите количество предприятий: "))
 
+
 all_companies = []
+
 for i in range(num_of_comp):
     name = input(f"Введите имя {i + 1} предприятия: ")
     info = []
@@ -19,13 +24,17 @@ for i in range(num_of_comp):
 
     all_companies.append(Company(name, info[0], info[1], info[2], info[3]))
 
+
 sum_ = 0
+
 
 for i in all_companies:
     for j in range(1, len(i._fields)):
         sum_ += int(i[j])
 
+
 print(f"Средняя прибыль за год всех компаний составляет: {sum_/len(all_companies)}$")
+
 
 for i in all_companies:
     each_sum = 0
