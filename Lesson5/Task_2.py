@@ -9,11 +9,10 @@ from collections import deque
 
 hex_numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
 
-memo_number = 0
-result = deque()
-
 while True:
 
+    memo_number = 0
+    result = deque()
     number2 = deque(input("Введите первое шестнадцатеричное число: "))
     number1 = deque(input("Введите второе шестнадцатеричное число: "))
 
@@ -38,7 +37,7 @@ while True:
                     result.appendleft('0')
                 else:
                     result.appendleft(hex_numbers[repo + memo_number])
-                memo_number = 0
+                    memo_number = 0
 
     if memo_number == 1:
         result.appendleft(memo_number)
