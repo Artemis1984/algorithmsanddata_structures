@@ -7,14 +7,14 @@
 from collections import deque
 
 
-hex_numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+hex_numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
 
 while True:
 
     memo_number = 0
     result = deque()
-    number2 = deque(input("Введите первое шестнадцатеричное число: "))
-    number1 = deque(input("Введите второе шестнадцатеричное число: "))
+    number2 = deque(str.upper(input("Введите первое шестнадцатеричное число: ")))
+    number1 = deque(str.upper(input("Введите второе шестнадцатеричное число: ")))
 
     if len(number1) > len(number2):
         number2.extendleft('0' * (len(number1) - len(number2)))
